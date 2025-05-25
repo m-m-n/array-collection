@@ -71,7 +71,16 @@ class HashMap implements \ArrayAccess, \Countable, \IteratorAggregate
     return $this->has($offset);
   }
 
-  public function offsetGet($offset): mixed
+  // 本来メソッドの戻り値のタイプヒントにmixedを指定するが
+  // PHP 7系ではmixedが使えないためにタイプヒントを書いていない
+  // しかしPHP 8系ではタイプヒントがないとメッセージが出力されるので抑制する
+  // あるべき姿
+  // public function offsetGet($offset): mixed
+  // {
+  //   return $this->get($offset);
+  // }
+  #[\ReturnTypeWillChange]
+  public function offsetGet($offset)
   {
     return $this->get($offset);
   }
