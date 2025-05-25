@@ -1,0 +1,16 @@
+{
+    "name": "array-collection/array-collection",
+    "description": "PHP array collection library with HashMap and List classes",
+    "type": "library",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArrayCollection\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
